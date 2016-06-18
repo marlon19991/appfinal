@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Good Food a  Hotel and Restaurant Category Flat bootstrap Responsive  Website Template | Home :: w3layouts</title>
+<title>Sistema De Calificaciones<</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,6 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
 					</nav>
+			
+
 			<div class="slider">
 				<div class="callbacks_container">
 					<ul class="rslides" id="slider">
