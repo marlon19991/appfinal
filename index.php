@@ -94,10 +94,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <a href="cerrar.php"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
                         </li>								
-			</ul>								  
-		</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
-		</nav>
+						</ul>								  
+					</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+					</nav>
 			<div class="slider">
 				<div class="callbacks_container">
 					<ul class="rslides" id="slider">

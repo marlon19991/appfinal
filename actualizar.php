@@ -15,6 +15,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <!--header-->
@@ -30,32 +32,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>				  
-						<div class="navbar-brand">
-							<h1><a href="index.php">Actualizar Notas</a></h1>
+						<div class="navbar-brand navbar-right">
+							<h1><a href="index.php">Actualizar Calificaciones</a></h1>
 						</div>
 					</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="about.php">About</a></li>
-							<li><a href="index.php">Menu</a></li>
+					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav "><br>
+							<li ><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+							<li><a href="registrar.php">Registrar Notas</a></li>
+							<li class="active"><a href="actualizar.php">Actualizar Notas</a></li>
 								<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery <span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="gallery.php">Gallery 1</a></li>
-										<li><a href="gallery.php">Gallery 2</a></li>
-										<li><a href="gallery.php">Gallery 3</a></li>
+										<li><a href="gallery.php">Consultar Por Estudiante</a></li>
+										<li><a href="gallery.php">Consultar Por Materia</a></li>
+										<li><a href="gallery.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
-							<li><a href="codes.php">Codes</a></li>
-							<li><a href="contact.php">Contact</a></li>
-						</ul>
-								  
+							<li><a href="#menu" class="scroll">Acerca De</a></li>
+								
+								<li class="dropdown ">
+                    <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp Marlon Yela<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
+                        </li>
+                        <li>
+                        <!-- se daño el anterior por eso cambie el formulari -->
+                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="cerrar.php"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
+                        </li>								
+						</ul>	<br>	<br>	<br>							  
+						</ul>								  
 					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-			</nav>
+					</div><!-- /.container-fluid -->
+					</nav>
 			
 		</div>
 	</div>
