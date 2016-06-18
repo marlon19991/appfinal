@@ -1,5 +1,5 @@
 <?php
-echo 'qqqqttt';
+echo 'adas';
 ?>
 /* 
  * To change this license header, choose License Headers in Project Properties.
