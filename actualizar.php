@@ -31,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 						</button>				  
 						<div class="navbar-brand">
-							<h1><a href="index.php">Registrar Notas</a></h1>
+							<h1><a href="index.php">Actualizar Notas</a></h1>
 						</div>
 					</div>
 

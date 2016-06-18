@@ -68,8 +68,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br>
 							<li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
-							<li><a href="about.php">Registrar Notas</a></li>
-							<li><a href="about.php">Actualizar Notas</a></li>
+							<li><a href="registrar.php">Registrar Notas</a></li>
+							<li><a href="actualizar.php">Actualizar Notas</a></li>
 								<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -149,126 +149,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--header-->
 			<!--content-->
 				<div class="content">
-				<!--high-->
-					<div class="high-quality">
-						<div class="container">
-							<h3>RECEIVE GOOD FOOD </h3>
-							<h2>AND <span>HIGH QUALITY</span> SERVICE</h2>
-							<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit an</p>
-						</div>
-					</div>
-					<!--high-->
-					<!--menu-->
-						<div class="feature-menu" id="menu">
-							<div class="container">
-								<h3><span>feature</span> menu</h3>
-								<div class="feature-grids">
-									<div class="col-md-4 feature-grid">
-										<img src="images/m1.png" class="img-responsive" alt="/">
-										<div class="rate rate1">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="col-md-4 feature-grid">
-									<img src="images/m2.png" class="img-responsive" alt="/">
-									<div class="rate">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="col-md-4 feature-grid">
-									<img src="images/m3.png" class="img-responsive" alt="/">
-									<div class="rate">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="col-md-4 feature-grid">
-									<img src="images/m4.png" class="img-responsive" alt="/">
-									<div class="rate">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="col-md-4 feature-grid">
-									<img src="images/m5.png" class="img-responsive" alt="/">
-									<div class="rate">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="col-md-4 feature-grid">
-									<img src="images/m6.png" class="img-responsive" alt="/">
-									<div class="rate">
-											<h5>$9</h5>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					<!--menu-->
-					<!--post-->
-					<div class="last-post">
-						<div class="container">
-							<h3><span>latest</span> post</h3>
-							<div class="last-grids">
-								<div class="col-md-3 last-grid">
-									<div class="last1">
-										 <a href="#" class="mask"><img src="images/g7.jpg" alt="image" class="img-responsive zoom-img"></a>
-										<h4>Molestie consequat</h4>
-										<p>Est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepiu .</p>
-									</div>
-								</div>	
-								<div class="col-md-3 last-grid">
-									<div class="last1">
-										<a href="#" class="mask"><img src="images/g5.jpg" alt="image" class="img-responsive zoom-img"></a>
-										<h4>Quam nunc putam</h4>
-										<p>Est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepiu .</p>
-									</div>
-								</div>	
-								<div class="col-md-3 last-grid">
-									<div class="last1">
-										<a href="#" class="mask"><img src="images/g2.jpg" alt="image" class="img-responsive zoom-img"></a>
-										<h4>Molestie consequat</h4>
-										<p>Est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepiu .</p>
-									</div>
-								</div>	
-								<div class="col-md-3 last-grid">
-									<div class="last1">
-										<a href="#" class="mask"><img src="images/g4.jpg" alt="image" class="img-responsive zoom-img"></a>
-										<h4>Quam nunc putam</h4>
-										<p>Est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepiu .</p>
-									</div>
-								</div>	
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-						<!--post-->
-						<!--news-->
-							<div class="new-section">
-								<div class="container">
-									<h3><span>latest</span> news</h3>
-										<div class="news-grids">
-											<div class="col-md-4 new-grid">
-												 <a href="#" class="mask"><img src="images/n1.jpg" alt="image" class="img-responsive zoom-img"></a>
-												 <h4><a href="#">Cum sociis natoque</a></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa…</p>
-											</div>
-											<div class="col-md-4 new-grid">
-											<a href="#" class="mask"><img src="images/n2.jpg" alt="image" class="img-responsive zoom-img"></a>
-												 <h4><a href="#">Cum sociis natoque</a></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa…</p>
-											</div>
-											<div class="col-md-4 new-grid">
-											<a href="#" class="mask"><img src="images/n3.jpg" alt="image" class="img-responsive zoom-img"></a>
-												 <h4><a href="#">Cum sociis natoque</a></h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa…</p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-								</div>
-							</div>
-						<!--news-->
+			
+			
 						<!--footer-->
-					<div class="footer-section">
+					<div class="footer-section" id="menu">
 						<div class="container">
 							<div class="footer-grids">
 								<div class="col-md-3 footer-grid">

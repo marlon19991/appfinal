@@ -105,7 +105,7 @@ body{
 	font-family: 'Ubuntu Condensed', sans-serif
 }
 .header {
-    background: url(../images/banner1.jpg) no-repeat 0px 0px;
+    background: url(../images/banner1.png) no-repeat 0px 0px;
     background-size: cover;
     min-height: 938px;
 }
