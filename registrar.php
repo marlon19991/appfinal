@@ -6,9 +6,10 @@ if (!isset($_SESSION['id_usuario'])) {
 require('conexion.php');
 if(isset($_SESSION['id_usuario'])){ 
     $id_usu=$_SESSION['id_usuario'];
-
-
-    
+    $registroe=mysqli_query($conexion,"SELECT * FROM usuario where id_tipo_usuario=2") or die ("Hay problemas en la consulta");	
+	$registrop=mysqli_query($conexion,"SELECT * FROM Periodo ") or die ("Hay problemas en la consulta");
+    $registrom=mysqli_query($conexion,"SELECT * FROM materia ") or die ("Hay problemas en la consulta");
+    $registrog=mysqli_query($conexion,"SELECT * FROM grado ") or die ("Hay problemas en la consulta");
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,14 +44,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 						</button>				  
 						<div class="navbar-brand navbar-right">
-							<h1><a href="index.php">Registrar Calificaciones</a></h1>
+							<h1><a href="index_doc.php">Registrar Calificaciones</a></h1>
 						</div>
 					</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br><br><br>
-							<li ><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+							<li ><a href="index_doc.php">Inicio <span class="sr-only">(current)</span></a></li>
 							<li class="active"><a href="registrar.php">Registrar Notas</a></li>
 							<li><a href="actualizar.php">Actualizar Notas</a></li>
 								<li class="dropdown">
@@ -64,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 								
 								<li class="dropdown ">
-                    <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp Marlon Yela<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo " ".$_SESSION['nombre_usuario'];?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
@@ -85,21 +86,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!--header-->
+<?php } ?>
 			<!--content-->
 				<div class="content">
 				<!--about-->
 					<div class="about-section">
 						<div class="container">
-							<h2><span>Our</span> restaurant</h2>
+							<h2><span>Registrar</span> Nota</h2>
 								<div class="about-grids">
-									<div class="col-md-4 about-grid1">
-										<img src="images/g8.jpg" class="img-responsive" alt="/">
+									<div class="col-md-12 about-grid1" align="center">
+										<img src="images/g8.jpg" width="200px" height="100px" class="img-responsive" alt="/">
 									</div>
-									<div class="col-md-8 about-grid">
-										<h5>Donec euismod imperdiet feugiat. Vivamus non interdum eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tristique ut lacus et scelerisque.</h5>
-										<p>Suspendisse potenti. Sed fermentum, libero eget euismod convallis, justo lectus egestas dui, eu tempor lectus risus a dolor. Suspendisse tempor quam purus, sit amet feugiat sapien molestie nec. Sed aliquam, justo ut pharetra dapibus, leo risus iaculis nulla, ut sagittis nunc diam lobortis metus. Nulla pulvinar odio vitae nisl dignissim, id rutrum lorem molestie. Maecenas euismod hendrerit risus, ut congue arcu tincidunt sed. Nullam at ipsum vel ante interdum lobortis. Etiam quis ultricies enim, in venenatis sapien. Phasellus interdum consectetur enim, venenatis eleifend urna sed nulla id magna placerat hendrerit.</p>
-									</div>
-									<div class="clearfix"></div>
 								</div>
 						</div>
 					</div>
@@ -107,49 +104,119 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="cooking">
 						<div class="container">
 							<div class="cooking-grids">
-								<div class="col-md-4 cook-grid">
-									<div class="cook1">
-										<h3>Our Mission </h3>
-										<p>Fratione uptate mseesciun neque porroisqm estrem equia dolorer ntreterase geryiuyasa miertase.</p>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor sit</a></li>
-											<li><a href="#">Amet, consectetur</a></li>
-											<li><a href="#">Nisi ex vel dictum dui</a></li>
-											<li><a href="#">Lorem ipsum dolor sit</a></li>
-											<li><a href="#">Praesent lacinia</a></li>
-											<li><a href="#">Lorem ipsum dolor sit</a></li>
-											<li><a href="#">Praesent lacinia</a></li>
-										</ul>
-									</div>	
-								</div>
-								<div class="col-md-4 cook-grid">
-									<div class="cook2">
-										<h3>Cooking Classes</h3>
-										<p>Fratione uptate mseesciun neque porroisqm estrem equia dolorer ntreterase geryiuyasa miertase.</p>
-										<ul>
-											<li><a href="#">Aid venenatis enim</a></li>
-											<li><a href="#">Curabitur sit amet</a></li>
-											<li><a href="#">Dolor sed lorem</a></li>
-											<li><a href="#">Vulputate ullamcorper</a></li>
-											<li><a href="#">Praesent lacinia</a></li>
-											<li><a href="#">Vulputate ullamcorper</a></li>
-											<li><a href="#">Praesent lacinia</a></li>
-										</ul>
-									</div>						
-								</div>
-								<div class="col-md-4 cook-grid">
+								<div class="col-md-12 cook-grid">
 									<div class="cook3">
-										<h3>Cooking Guide</h3>
-										<p>Fratione uptate mseesciun neque porroisqm estrem equia dolorer ntreterase geryiuyasa miertase.</p>
-										<ul>
-											<li><a href="#">Adipiscing elit fusce</a></li>
-											<li><a href="#">Amet, consectetur</a></li>
-											<li><a href="#">Praesent lacinia</a></li>
-											<li><a href="#">Lorem ipsum dolor sit</a></li>
-											<li><a href="#">Dui eget risus ultricies</a></li>
-											<li><a href="#">Lorem ipsum dolor sit</a></li>
-											<li><a href="#">Dui eget risus ultricies</a></li>
-										</ul>
+										<h3>Formulario</h3>
+										<br>
+										<p>Completa los campor y registra las notas periodicas de los estudiantes</p>
+										<br>
+										
+											<form method="Post" action="registrar-nota.php">
+
+											<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-1">Grado Academico</label></div>
+												</div>
+												<div class="col-md-5">
+													<div>
+													    <select name="id_grado" id="select-native-1" class="btn btn-warning">
+													        <option value="">Grado</option>
+													        <?php while ( $row = $registrog->fetch_array() ){?>
+													        <option value=" <?php echo $row['id_grado'] ?> " >
+													        <?php echo $row['nombre_grado']; ?>
+													        </option>
+													        <?php }?>    
+													    </select> 
+													</div>
+												</div>
+												</div>
+
+												<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-2">Periodo Academico</label></div>
+												</div>
+												<div class="col-md-5">
+													<div>
+													    <select name="id_periodo" id="select-native-2" class="btn btn-warning">
+													        <option value="">Periodo</option>
+													        <?php while ( $row = $registrop->fetch_array() ){?>
+													        <option value=" <?php echo $row['id_periodo'] ?> " >
+													        <?php echo $row['periodo_escolar']; ?>
+													        </option>
+													        <?php }?>    
+													    </select> 
+													</div>
+												</div>
+												</div>
+
+												<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-3">Materia</label></div>
+												</div>
+												<div class="col-md-5">
+													<div>
+													    <select name="id_materia" id="select-native-3" class="btn btn-warning">
+													        <option value="">Materia</option>
+													        <?php while ( $row = $registrom->fetch_array() ){?>
+													        <option value=" <?php echo $row['id_materia'] ?> " >
+													        <?php echo $row['nombre_materia']; ?>
+													        </option>
+													        <?php }?>    
+													    </select> 
+													</div>
+												</div>
+												</div>
+												<div class="col-md-3"></div>
+											<hr>
+											
+											<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-1">Estudiantes</label></div>
+												</div>
+												<div class="col-md-5">
+											              <select name="id_usuario" id="select-native-1" class="btn btn-warning">
+											                  <option value="">Estudiantes</option>
+											                  <?php while ( $row = $registroe->fetch_array() ){?>
+											                  <option value=" <?php echo $row['id_usuario'] ?> " >
+											                  <?php echo $row['nombre_usuario']; ?>
+											                  </option>
+											                  <?php }?>    
+											              </select> 
+											    </div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-2">Nota</label></div>
+												</div>
+												<div class="col-md-5">
+												        <div><input type="text" name="nota" class="form-control" placeholder="Nota"/></div>
+											    </div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-3">Descripcion</label></div>
+												</div>
+												<div class="col-md-5 ">
+												        <div class="form-group"><textarea type="text " name="desc" class="form-control" placeholder="Descripción" rows="5"></textarea></div>
+											    </div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-4">
+													<div><label for="select-native-3">Fecha</label></div>
+												</div>
+												<div class="col-md-5">
+												        <div><input type="text" name="fecha" class="form-control" placeholder="Fecha"/></div>
+											    </div>
+											</div>
+											<br>
+											<div class="row">
+												<div align="center" class="col-md-12"><input type="submit" value="Registrar" class="btn btn-primary"></div>
+											</div>
+											</form>
+
 									</div>	
 								</div>
 							</div>

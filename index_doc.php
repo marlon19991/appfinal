@@ -8,12 +8,16 @@ if(isset($_SESSION['id_usuario'])){
     $id_usu=$_SESSION['id_usuario'];
 
 
-
+ 	$perfil="SELECT usuario.cod_usuario,usuario.nombre_usuario,tipo_usuario.nombre_tipo_usuario FROM usuario
+ 			  inner join tipo_usuario
+ 			  on tipo_usuario.id_tipo_usuario=usuario.id_tipo_usuario
+              where usuario.id_usuario=".$id_usu;
+    $estudiante=mysqli_query($conexion,$perfil) or die("problemas en la consulta".$perfil);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sistema De Calificaciones<</title>
+<title>Sistema De Calificaciones</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,10 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
- 
-   
-  
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <script src="js/responsiveslides.min.js"></script>
  <script>
     $(function () {
@@ -99,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                         <!-- se daño el anterior por eso cambie el formulari -->
-                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal2"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -169,44 +170,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="container">
 							<div class="footer-grids">
 								<div class="col-md-3 footer-grid">
-									<h4>product</h4>
+									<h4>Desarrollado por.</h4>
 									<ul>
-										<li>Fresh fruits </li>
-										<li>Dried fruits</li>
-										<li>Herbs & spices</li>
-										<li>Fresh vegetables</li>
-										<li>Seafood</li>
+										<li>Cristian Andrés Patiño Portilla</li>
+										<li>Marlon Estaban Yela Burbano</li>
+
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
-									<h4>Open Hours</h4>
+									<h4>Institución</h4>
 									<ul>
-										<li>Mondays: Closed</li>
-										<li>Tue-Fri : 10am - 11pm</li>
-										<li>Sat-Sun : 9am - 11pm</li>
-										<li>Public Holidays : 10am - 8pm</li>
+										<li>Universidad de Nariño</li>
+										<li>Lic. Informática</li>
+										<li>2016</li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
-									<h4>Social</h4>
+									<h4>Redes Sociales</h4>
 									<ul>
 										<li><a href="#">facebook</a></li>
 										<li><a href="#">twitter</a></li>
 										<li><a href="#">google +</a></li>
-										<li><a href="#">Pinterest</a></li>
-										<li><a href="#">vimeo</a></li>
 									</ul>
 								</div>
 								<div class="col-md-3 footer-grid">
-									<h4>Get In Touch</h4>
-									<p>8901 Marmora Road</p>
-									<p>Glasgow, DO4 89GR.</p>
-									<p>Telephone : +1 234 567 890</p>
-									<p>FAX : + 1 234 567 890</p>
+									<h4>Contacto</h4>
+									<p>Telefoni : 311 111 1111</p>
 									<p>E-mail : <a href="mailto:example@mail.com"> example@mail.com</a></p>
 
 								</div>
-								<div class="clearfix"></div>
 							</div>
 						</div>
 					</div>
@@ -216,71 +208,108 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--copy-->
 					<div class="copy-section">
 						<div class="container">
-							<p>Desarrollado por.<br> Cristian Andrés Patiño Portilla - Marlon Estaban Yela Burbano<br> 2016 Univerdidad de Nariño. &copy; All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+							<p>&copy; All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 						</div>
 					</div>
 				<!--copy-->
-		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-info">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					</div>
-						<div class="modal-body">
-							<div class="compose-grids">
-									<div class="payment-online-form-left">
-											<form>
-												<h4><span class="shipping"> </span>Shipping Details</h4>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"></li>
-													<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-													<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-													<li><input class="text-box-dark" type="text" value="Pin Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pin Code';}"></li>
-													
-												</ul>
-												<div class="clearfix"></div>
-												<h4 class="paymenthead"><span class="payment"></span>Payment Details</h4>
-												<div class="clearfix"></div>
-											<ul class="payment-type">
-												<li><span class="col_checkbox">
-													<input id="3" class="css-checkbox1" type="checkbox">
-													<label for="3" class="css-label1"></label>
-													<a class="visa" href="#"></a>
-													</span>												
-												</li>
-												<li>
-													<span class="col_checkbox">
-														<input id="4" class="css-checkbox2" type="checkbox">
-														<label for="4" class="css-label2"></label>
-														<a class="paypal" href="#"></a>
-													</span>
-												</li>
-											</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-													<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-												
-												</ul>
-												<ul>
-													<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-													<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-												
-												</ul>
 
-									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-success">Process order</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- ver perfil-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mi Perfil</h4>
+      </div>
+        <div class="modal-body">
+
+                <div class="container2">
+                <div class="div-img" align="center">
+                <img class="img" src="images/usuario.png" width="150px" height="200px" title="Usuario" alt="Usuario">
+                </div>
+                </div>
+
+
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div class="panel panel-info-m ">
+                <div class="panel-heading">
+                Información Personal
+                </div>
+                <div class="panel-body">
+                Codigo Docente: <?php echo $est['cod_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Nombres: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Rol: <?php echo $est['nombre_tipo_usuario']; ?>
+                </div>
+                </div>
+                <?php } ?>
+
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+	      </div>
+	    </div>
+
+  </div>
+</div>
+
+<!-- editar perfil -->
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar Perfil</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">    
+            <div class="col-md-6">
+                <div class="panel panel-primary-m">
+                    <div class="panel-heading"><b>Usuario</b></div>
+                    <div class="panel-body">        
+                <form method="POST" action="actualizar-perfil.php">                  
+                <div align="center" class="form-add-trec">
+                <!-- consulta -->
+                <?php
+                include ("conexion.php");
+                $id_usu=$_SESSION['id_usuario'];
+                $registrous=mysqli_query($conexion,"SELECT id_usuario, nombre_usuario, cod_usuario FROM usuario
+                    WHERE id_usuario='$id_usu'") or die("Problemas en la consulta");
+                while ($row=mysqli_fetch_array($registrous)){
+                ?>
+                <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
+                     
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Nombres Usuario</div>
+                  <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
+                </div>
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Codigo Usuario</div>
+                  <div class="panel-body"><input type="text" name="cod_usuario" required class="form-control" value="<?php echo $row['cod_usuario'];?>"/></div>
+                </div>
+                <div><input type="submit" value="Actualizar Datos" class="btn btn-primary"></div>
+
+                <?php }?>
+                </div>
+                </form>
+
+                    </div>
+                </div>
+            </div>        
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+		
 </body>
 </html>
