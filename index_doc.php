@@ -85,9 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="gallery.php">Consultar Por Estudiante</a></li>
-										<li><a href="gallery.php">Consultar Por Materia</a></li>
-										<li><a href="gallery.php">Consultar Por Grado</a></li>
+										<li><a href="consulta-estudiante.php">Consultar Por Estudiante</a></li>
+										<li><a href="consulta-materia.php">Consultar Por Materia</a></li>
+										<li><a href="consulta-grado.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
 							<li><a href="#menu" class="scroll">Acerca De</a></li>

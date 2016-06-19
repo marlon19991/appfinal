@@ -7,7 +7,11 @@ require('conexion.php');
 if(isset($_SESSION['id_usuario'])){ 
     $id_usu=$_SESSION['id_usuario'];
 
-
+ 	$perfil="SELECT usuario.cod_usuario,usuario.nombre_usuario,tipo_usuario.nombre_tipo_usuario FROM usuario
+ 			  inner join tipo_usuario
+ 			  on tipo_usuario.id_tipo_usuario=usuario.id_tipo_usuario
+              where usuario.id_usuario=".$id_usu;
+    $estudiante=mysqli_query($conexion,$perfil) or die("problemas en la consulta".$perfil);
 
 ?>
 <!DOCTYPE html>
@@ -83,9 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="gallery.php">Consultar Por Estudiante</a></li>
-										<li><a href="gallery.php">Consultar Por Materia</a></li>
-										<li><a href="gallery.php">Consultar Por Grado</a></li>
+										<li><a href="consulta-estudiante2.php">Consultar Por Estudiante</a></li>
+										<li><a href="consulta-materia2.php">Consultar Por Materia</a></li>
+										<li><a href="consulta-grado2.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
 								<li><a href="#menu" class="scroll">Acerca De</a></li>
@@ -98,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                         <!-- se daño el anterior por eso cambie el formulari -->
-                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal2"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -205,67 +209,102 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				<!--copy-->
-		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-info">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					</div>
-						<div class="modal-body">
-							<div class="compose-grids">
-									<div class="payment-online-form-left">
-											<form>
-												<h4><span class="shipping"> </span>Shipping Details</h4>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"></li>
-													<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-													<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-												</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-													<li><input class="text-box-dark" type="text" value="Pin Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pin Code';}"></li>
-													
-												</ul>
-												<div class="clearfix"></div>
-												<h4 class="paymenthead"><span class="payment"></span>Payment Details</h4>
-												<div class="clearfix"></div>
-											<ul class="payment-type">
-												<li><span class="col_checkbox">
-													<input id="3" class="css-checkbox1" type="checkbox">
-													<label for="3" class="css-label1"></label>
-													<a class="visa" href="#"></a>
-													</span>												
-												</li>
-												<li>
-													<span class="col_checkbox">
-														<input id="4" class="css-checkbox2" type="checkbox">
-														<label for="4" class="css-label2"></label>
-														<a class="paypal" href="#"></a>
-													</span>
-												</li>
-											</ul>
-												<ul>
-													<li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-													<li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-												
-												</ul>
-												<ul>
-													<li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-													<li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-												
-												</ul>
+<!-- ver perfil-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mi Perfil</h4>
+      </div>
+        <div class="modal-body">
 
-									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-success">Process order</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <div class="container2">
+                <div class="div-img" align="center">
+                <img class="img" src="images/usuario.png" width="150px" height="200px" title="Usuario" alt="Usuario">
+                </div>
+                </div>
+
+
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div class="panel panel-info-m ">
+                <div class="panel-heading">
+                Información Personal
+                </div>
+                <div class="panel-body">
+                Codigo Docente: <?php echo $est['cod_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Nombres: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Rol: <?php echo $est['nombre_tipo_usuario']; ?>
+                </div>
+                </div>
+                <?php } ?>
+
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+	      </div>
+	    </div>
+
+  </div>
+</div>
+
+<!-- editar perfil -->
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar Perfil</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">    
+            <div class="col-md-6">
+                <div class="panel panel-primary-m">
+                    <div class="panel-heading"><b>Usuario</b></div>
+                    <div class="panel-body">        
+                <form method="POST" action="actualizar-perfil.php">                  
+                <div align="center" class="form-add-trec">
+                <!-- consulta -->
+                <?php
+                include ("conexion.php");
+                $id_usu=$_SESSION['id_usuario'];
+                $registrous=mysqli_query($conexion,"SELECT id_usuario, nombre_usuario, cod_usuario FROM usuario
+                    WHERE id_usuario='$id_usu'") or die("Problemas en la consulta");
+                while ($row=mysqli_fetch_array($registrous)){
+                ?>
+                <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
+                     
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Nombres Usuario</div>
+                  <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
+                </div>
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Codigo Usuario</div>
+                  <div class="panel-body"><input type="text" name="cod_usuario" required class="form-control" value="<?php echo $row['cod_usuario'];?>"/></div>
+                </div>
+                <div><input type="submit" value="Actualizar Datos" class="btn btn-primary"></div>
+
+                <?php }?>
+                </div>
+                </form>
+
+                    </div>
+                </div>
+            </div>        
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

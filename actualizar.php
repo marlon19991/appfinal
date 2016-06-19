@@ -1,8 +1,25 @@
-
+<?php session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    
+    header('location:login.php');
+    }
+require('conexion.php');
+if(isset($_SESSION['id_usuario'])){ 
+    $id_usu=$_SESSION['id_usuario'];
+    $registroe=mysqli_query($conexion,"SELECT * FROM usuario where id_tipo_usuario=2") or die ("Hay problemas en la consulta");	
+	$registrop=mysqli_query($conexion,"SELECT * FROM Periodo ") or die ("Hay problemas en la consulta");
+    $registrom=mysqli_query($conexion,"SELECT * FROM materia ") or die ("Hay problemas en la consulta");
+    $registrog=mysqli_query($conexion,"SELECT * FROM grado ") or die ("Hay problemas en la consulta");
+    $perfil="SELECT usuario.cod_usuario,usuario.nombre_usuario,tipo_usuario.nombre_tipo_usuario FROM usuario
+ 			  inner join tipo_usuario
+ 			  on tipo_usuario.id_tipo_usuario=usuario.id_tipo_usuario
+              where usuario.id_usuario=".$id_usu;
+    $estudiante=mysqli_query($conexion,$perfil) or die("problemas en la consulta".$perfil);
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sistema De Calificaciones<</title>
+<title>Sistema De Calificaciones</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,14 +58,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br><br><br>
 							<li ><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
-							<li><a href="registrar.php">Registrar Notas</a></li>
+							<li ><a href="registrar.php">Registrar Notas</a></li>
 							<li class="active"><a href="actualizar.php">Actualizar Notas</a></li>
 								<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="gallery.php">Consultar Por Estudiante</a></li>
-										<li><a href="gallery.php">Consultar Por Materia</a></li>
-										<li><a href="gallery.php">Consultar Por Grado</a></li>
+										<li><a href="consulta-estudiante.php">Consultar Por Estudiante</a></li>
+										<li><a href="consulta-materia.php">Consultar Por Materia</a></li>
+										<li><a href="consulta-grado.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
 							
@@ -61,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                         <!-- se daño el anterior por eso cambie el formulari -->
-                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal2"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -76,6 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!--header-->
+<?php } ?>
 			<!--content-->
 				<div class="content">
 				<!--about-->
@@ -163,5 +181,105 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				<!--copy-->
 		
+
+		<!-- ver perfil-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mi Perfil</h4>
+      </div>
+        <div class="modal-body">
+
+                <div class="container2">
+                <div class="div-img" align="center">
+                <img class="img" src="images/usuario.png" width="150px" height="200px" title="Usuario" alt="Usuario">
+                </div>
+                </div>
+
+
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div class="panel panel-info-m ">
+                <div class="panel-heading">
+                Información Personal
+                </div>
+                <div class="panel-body">
+                Codigo Docente: <?php echo $est['cod_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Nombres: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Rol: <?php echo $est['nombre_tipo_usuario']; ?>
+                </div>
+                </div>
+                <?php } ?>
+
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+	      </div>
+	    </div>
+
+  </div>
+</div>
+
+<!-- editar perfil -->
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar Perfil</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">    
+            <div class="col-md-6">
+                <div class="panel panel-primary-m">
+                    <div class="panel-heading"><b>Usuario</b></div>
+                    <div class="panel-body">        
+                <form method="POST" action="actualizar-perfil.php">                  
+                <div align="center" class="form-add-trec">
+                <!-- consulta -->
+                <?php
+                include ("conexion.php");
+                $id_usu=$_SESSION['id_usuario'];
+                $registrous=mysqli_query($conexion,"SELECT id_usuario, nombre_usuario, cod_usuario FROM usuario
+                    WHERE id_usuario='$id_usu'") or die("Problemas en la consulta");
+                while ($row=mysqli_fetch_array($registrous)){
+                ?>
+                <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
+                     
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Nombres Usuario</div>
+                  <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
+                </div>
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Codigo Usuario</div>
+                  <div class="panel-body"><input type="text" name="cod_usuario" required class="form-control" value="<?php echo $row['cod_usuario'];?>"/></div>
+                </div>
+                <div><input type="submit" value="Actualizar Datos" class="btn btn-primary"></div>
+
+                <?php }?>
+                </div>
+                </form>
+
+                    </div>
+                </div>
+            </div>        
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>

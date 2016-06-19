@@ -54,17 +54,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
+					<div class=" collapse navbar-collapse navbar-right pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br><br><br>
-							<li ><a href="index_doc.php">Inicio <span class="sr-only">(current)</span></a></li>
-							<li class="active"><a href="registrar.php">Registrar Notas</a></li>
-							<li><a href="actualizar.php">Actualizar Notas</a></li>
-								<li class="dropdown">
+							<li ><a href="index_est.php">Inicio <span class="sr-only">(current)</span></a></li>
+								<li class="dropdown active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="consulta-estudiante.php">Consultar Por Estudiante</a></li>
-										<li><a href="consulta-materia.php">Consultar Por Materia</a></li>
-										<li><a href="consulta-grado.php">Consultar Por Grado</a></li>
+										<li><a href="consulta-estudiante2.php">Consultar Por Estudiante</a></li>
+										<li><a href="consulta-materia2.php">Consultar Por Materia</a></li>
+										<li><a href="consulta-grado2.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
 							
@@ -85,19 +83,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>								
 						</ul>	<br>	<br>	<br>							  
 					</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-					</nav>
+				</div><!-- /.container-fluid -->
+			</nav>
 			
 		</div>
 	</div>
-<!--header-->
+
 <?php } ?>
-			<!--content-->
+
 				<div class="content">
 				<!--about-->
 					<div class="about-section">
 						<div class="container">
-							<h2><span>Registrar</span> Nota</h2>
+							<h2><span>Consultar</span> Nota</h2>
 								<div class="about-grids">
 									<div class="col-md-12 about-grid1" align="center">
 										<img src="images/g8.jpg" width="200px" height="100px" class="img-responsive" alt="/">
@@ -111,75 +109,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="cooking-grids">
 								<div class="col-md-12 cook-grid">
 									<div class="cook3">
-										<h3>Formulario</h3>
+										<h3>Consulta por estudiante</h3>
 										<br>
-										<p>Completa los campor y registra las notas periodicas de los estudiantes</p>
-										<br>
-										
-											<form method="Post" action="registrar-nota.php">
+
+											<form method="Post" action="consulta-estudiante2.php">
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-1">Grado Academico</label></div>
+													<div><label for="select-native-1">Busca y seleccione el estudiante</label></div>
 												</div>
 												<div class="col-md-5">
-													<div>
-													    <select name="id_grado" id="select-native-1" class="btn btn-warning">
-													        <option value="">Grado</option>
-													        <?php while ( $row = $registrog->fetch_array() ){?>
-													        <option value=" <?php echo $row['id_grado'] ?> " >
-													        <?php echo $row['nombre_grado']; ?>
-													        </option>
-													        <?php }?>    
-													    </select> 
-													</div>
-												</div>
-												</div>
-
-												<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-2">Periodo Academico</label></div>
-												</div>
-												<div class="col-md-5">
-													<div>
-													    <select name="id_periodo" id="select-native-2" class="btn btn-warning">
-													        <option value="">Periodo</option>
-													        <?php while ( $row = $registrop->fetch_array() ){?>
-													        <option value=" <?php echo $row['id_periodo'] ?> " >
-													        <?php echo $row['periodo_escolar']; ?>
-													        </option>
-													        <?php }?>    
-													    </select> 
-													</div>
-												</div>
-												</div>
-
-												<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-3">Materia</label></div>
-												</div>
-												<div class="col-md-5">
-													<div>
-													    <select name="id_materia" id="select-native-3" class="btn btn-warning">
-													        <option value="">Materia</option>
-													        <?php while ( $row = $registrom->fetch_array() ){?>
-													        <option value=" <?php echo $row['id_materia'] ?> " >
-													        <?php echo $row['nombre_materia']; ?>
-													        </option>
-													        <?php }?>    
-													    </select> 
-													</div>
-												</div>
-												</div>
-												<div class="col-md-3"></div>
-											<hr>
-											
-											<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-1">Estudiantes</label></div>
-												</div>
-												<div class="col-md-5">
-											              <select name="id_usuario" id="select-native-1" class="btn btn-warning">
+											              <select name="id_usuarios" id="select-native-1" class="btn btn-warning">
 											                  <option value="">Estudiantes</option>
 											                  <?php while ( $row = $registroe->fetch_array() ){?>
 											                  <option value=" <?php echo $row['id_usuario'] ?> " >
@@ -189,58 +129,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											              </select> 
 											    </div>
 											</div>
-
-											<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-2">Nota</label></div>
-												</div>
-												<div class="col-md-5">
-												        <div><input type="text" name="nota" class="form-control" placeholder="Nota"/></div>
-											    </div>
-											</div>
-
-											<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-3">Descripcion</label></div>
-												</div>
-												<div class="col-md-5 ">
-												        <div class="form-group"><textarea type="text " name="desc" class="form-control" placeholder="Descripción" rows="5"></textarea></div>
-											    </div>
-											</div>
-
-											<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-3">Fecha</label></div>
-												</div>
-												<div class="col-md-5">
-												        <div><input type="text" name="fecha" class="form-control" placeholder="Fecha"/></div>
-											    </div>
-											</div>
 											<br>
 											<div class="row">
-												<div align="center" class="col-md-12"><input type="submit" value="Registrar" class="btn btn-primary"></div>
+												<div align="center" class="col-md-12"><input type="submit" value="Buscar" class="btn btn-primary"></div>
 											</div>
+											<br>
 											</form>
+											
+												<?php
+												$id_usuario = $_POST['id_usuarios'];
+												include("conexion.php");
+              										$r=mysqli_query($conexion,"SELECT 
+												    reporte.id_reporte, usuario.nombre_usuario, grado.nombre_grado, Periodo.Periodo_escolar, materia.nombre_materia,reporte.nota, reporte.descripcion, reporte.fecha
+												    FROM reporte
+												    INNER JOIN usuario
+												    ON reporte.id_usuario=usuario.id_usuario
+												    INNER JOIN grado
+												    ON grado.id_grado=reporte.id_grado
+												    INNER JOIN materia
+												    ON materia.id_materia=reporte.id_materia
+												    INNER JOIN Periodo
+												    ON Periodo.id_periodo=reporte.id_periodo
+												    where reporte.id_usuario=".$id_usuario)
+												    or die ("Hay problemas en la consulta".$r);											
+												?>
+												        <div class="panel panel-success">
+												        	<div class="row panel-heading">
+															<div class="col-md-1">Id Rorte</div>
+															<div class="col-md-2">Nombre Estudiante</div>
+												            <div class="col-md-1">Grado</div>
+												            <div class="col-md-1">Periodo</div>
+												            <div class="col-md-2">Materia</div>
+												            <div class="col-md-1">Nota</div>
+												            <div class="col-md-2">Comentario</div>
+												            <div class="col-md-2">Fecha</div>
+												        	</div><br>
+												        <?php while ($campoes=mysqli_fetch_array($r)) { ?>
+												            <div class="row panel-body">
+												            <div class="col-md-1"><?php echo $campoes['id_reporte'];?></div>
+												            <div class="col-md-2"><?php echo $campoes['nombre_usuario'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['nombre_grado'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['Periodo_escolar'];?></div>
+												            <div class="col-md-2"><?php echo $campoes['nombre_materia'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['nota'];?></div>
+												            <div class="col-md-2"><?php echo $campoes['descripcion'];?></div>
+												            <div class="col-md-2"><?php echo $campoes['fecha'];?></div>
+												            </div>
+												        <?php } ?>
+												        </div>
 
 									</div>	
 								</div>
 							</div>
 						</div>
 					</div>
-						<!--staff-->
-							
-						<!--our History-->
-						<!--footer-->
-									<div class="content">
-			
-			
+
+			</div>
+			<div class="content">
 				<!--copy-->
 					<div class="copy-section">
 						<div class="container">
 							<p>&copy; 2016 Good Food. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 						</div>
 					</div>
-
+</div>
 
 <!-- ver perfil-->
 <div id="myModal" class="modal fade" role="dialog">
