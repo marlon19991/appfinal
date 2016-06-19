@@ -38,7 +38,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav "><br>
+						<ul class="nav navbar-nav "><br><br><br>
 							<li ><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
 							<li class="active"><a href="registrar.php">Registrar Notas</a></li>
 							<li><a href="actualizar.php">Actualizar Notas</a></li>
