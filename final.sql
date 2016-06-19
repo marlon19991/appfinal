@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-06-2016 a las 18:50:11
+-- Tiempo de generación: 19-06-2016 a las 23:40:04
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -141,7 +141,19 @@ CREATE TABLE IF NOT EXISTS `reporte` (
   `descripcion` varchar(200) NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`id_reporte`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`id_reporte`, `Id_usuario`, `id_grado`, `id_periodo`, `id_materia`, `nota`, `descripcion`, `fecha`) VALUES
+(3, 3, 5, 1, 2, 3, 'copion', '0000-00-00'),
+(2, 2, 6, 1, 1, 3, 'saberes insuficientes', '0000-00-00'),
+(6, 3, 5, 1, 11, 2, 'nnnn', '0000-00-00'),
+(5, 2, 6, 1, 8, 2, 'muchas faltas', '0000-00-00'),
+(7, 2, 1, 2, 1, 3, 'dd', '0000-00-00'),
+(8, 3, 5, 2, 2, 4, 'ffff', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -183,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `cod_usuario`, `id_tipo_usuario`) VALUES
-(1, 'Cristian', 123, 1),
+(1, 'Cristian', 1234, 1),
 (2, 'Marlon', 456, 2),
 (3, 'Juan ', 789, 2),
 (4, 'Pedro', 101, 1);
