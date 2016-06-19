@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['id_usuario'])){ 
+    
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,16 +51,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div>
 								 
-								<form method="post" action="">
+								<form method="post" action="validarlogin.php">
 									<table>
 									<tr><td><h3>Login</h3> </td></tr>
 									<tr>
 									<td><p>Usuario</p></td>
-									<td><input type="text" name="usu"></td>
+									<td><input type="text" name="usu" placeholder="Usuario" required="required"/></td>
 									</tr>
 									<tr>
 									<td><p>Clave</p></td>
-									<td><input type="password" name="pass"></td>
+									<td><input type="password" name="pass" placeholder="Password" required="required"/></td>
 									</tr>
 									<tr>
 									<td colspan="2"><input type="Submit" value="Ingresar" class="btn btn-danger btn-md"></td>

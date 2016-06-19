@@ -205,7 +205,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--copy-->
 					<div class="copy-section">
 						<div class="container">
-							<p>&copy; 2016 Univerdidad de Nariño. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+							<p>Desarrollado por.<br> Cristian Andrés Patiño Portilla - Marlon Estaban Yela Burbano<br> 2016 Univerdidad de Nariño. &copy; All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 						</div>
 					</div>
 				<!--copy-->
