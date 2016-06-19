@@ -1,4 +1,15 @@
+<?php session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    
+    header('location:login.php');
+    }
+require('conexion.php');
+if(isset($_SESSION['id_usuario'])){ 
+    $id_usu=$_SESSION['id_usuario'];
 
+
+    
+?>
 <!DOCTYPE html>
 <html>
 <head>

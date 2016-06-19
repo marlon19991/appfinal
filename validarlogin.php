@@ -20,14 +20,14 @@ if($row = mysqli_fetch_row($result))
 		if ($row[2]==1)
 		{
 			session_start();  
-			//Almacenamos el nombre de usuario en una variable de sesión usuario
-			$_SESSION['nombre_usuario'] = $usu;  
-			//Redireccionamos a la pagina: index.php
+			$_SESSION['id_usuario'] = $c;
+			$_SESSION['nombre_usuario'] = $usu; 
 			header("Location: index_doc.php");
 		}
 		elseif($row[2]==2)
 		{
 			session_start();
+			$_SESSION['id_usuario'] = $c;
 			$_SESSION['nombre_usuario'] = $usu;  
 			header("Location: index_est.php");
 		}

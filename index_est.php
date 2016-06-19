@@ -1,4 +1,15 @@
-﻿
+﻿<?php session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    
+    header('location:login.php');
+    }
+require('conexion.php');
+if(isset($_SESSION['id_usuario'])){ 
+    $id_usu=$_SESSION['id_usuario'];
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="#menu" class="scroll">Acerca De</a></li>
 								
 						<li class="dropdown ">
-                    <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp Marlon Yela<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo " ".$_SESSION['nombre_usuario'];?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#" type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-fw fa-user"></i> Ver Perfil</a>
@@ -97,6 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 		</nav>
+		<?php } ?>
 			<div class="slider">
 				<div class="callbacks_container">
 					<ul class="rslides" id="slider">
