@@ -10,6 +10,11 @@ if(isset($_SESSION['id_usuario'])){
 	$registrop=mysqli_query($conexion,"SELECT * FROM Periodo ") or die ("Hay problemas en la consulta");
     $registrom=mysqli_query($conexion,"SELECT * FROM materia ") or die ("Hay problemas en la consulta");
     $registrog=mysqli_query($conexion,"SELECT * FROM grado ") or die ("Hay problemas en la consulta");
+    $perfil="SELECT usuario.cod_usuario,usuario.nombre_usuario,tipo_usuario.nombre_tipo_usuario FROM usuario
+ 			  inner join tipo_usuario
+ 			  on tipo_usuario.id_tipo_usuario=usuario.id_tipo_usuario
+              where usuario.id_usuario=".$id_usu;
+    $estudiante=mysqli_query($conexion,$perfil) or die("problemas en la consulta".$perfil);
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li>
                         <li>
                         <!-- se daño el anterior por eso cambie el formulari -->
-                            <a href="frm_perfil_est.php" target="formularios"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
+                            <a href="#" type="button" data-toggle="modal" data-target="#myModal2"><i class="fa fa-fw fa-gear"></i> Editar Pefil</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -108,14 +113,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="cook3">
 										<h3>Formulario</h3>
 										<br>
-										<p>Completa los campos y registra las notas periodicas de los estudiantes</p>
+										<p>Completa los campor y registra las notas periodicas de los estudiantes</p>
 										<br>
 										
 											<form method="Post" action="registrar-nota.php">
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-1">Grado Academico</label></div><br>
+													<div><label for="select-native-1">Grado Academico</label></div>
 												</div>
 												<div class="col-md-5">
 													<div>
@@ -133,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 												<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-2">Periodo Academico</label></div><br>
+													<div><label for="select-native-2">Periodo Academico</label></div>
 												</div>
 												<div class="col-md-5">
 													<div>
@@ -149,11 +154,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 												</div>
 
-												
 												<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-3">Materia</label></div><br>
-												</div>										
+													<div><label for="select-native-3">Materia</label></div>
+												</div>
 												<div class="col-md-5">
 													<div>
 													    <select name="id_materia" id="select-native-3" class="btn btn-warning">
@@ -167,11 +171,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 												</div>
 												</div>
-												
+												<div class="col-md-3"></div>
+											<hr>
 											
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-1">Estudiantes</label></div><br>
+													<div><label for="select-native-1">Estudiantes</label></div>
 												</div>
 												<div class="col-md-5">
 											              <select name="id_usuario" id="select-native-1" class="btn btn-warning">
@@ -187,7 +192,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-2">Nota</label></div><br>
+													<div><label for="select-native-2">Nota</label></div>
 												</div>
 												<div class="col-md-5">
 												        <div><input type="text" name="nota" class="form-control" placeholder="Nota"/></div>
@@ -196,7 +201,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-3">Descripcion</label></div><br>
+													<div><label for="select-native-3">Descripcion</label></div>
 												</div>
 												<div class="col-md-5 ">
 												        <div class="form-group"><textarea type="text " name="desc" class="form-control" placeholder="Descripción" rows="5"></textarea></div>
@@ -235,6 +240,105 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<p>&copy; 2016 Good Food. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 						</div>
 					</div>
-			
+
+
+<!-- ver perfil-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mi Perfil</h4>
+      </div>
+        <div class="modal-body">
+
+                <div class="container2">
+                <div class="div-img" align="center">
+                <img class="img" src="images/usuario.png" width="150px" height="200px" title="Usuario" alt="Usuario">
+                </div>
+                </div>
+
+
+                <?php while ($est=mysqli_fetch_array($estudiante)) { ?>
+                <div class="panel panel-info-m ">
+                <div class="panel-heading">
+                Información Personal
+                </div>
+                <div class="panel-body">
+                Codigo Docente: <?php echo $est['cod_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Nombres: <?php echo $est['nombre_usuario']; ?>
+                </div>
+                <div class="panel-body">
+                Rol: <?php echo $est['nombre_tipo_usuario']; ?>
+                </div>
+                </div>
+                <?php } ?>
+
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+	      </div>
+	    </div>
+
+  </div>
+</div>
+
+<!-- editar perfil -->
+
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar Perfil</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">    
+            <div class="col-md-6">
+                <div class="panel panel-primary-m">
+                    <div class="panel-heading"><b>Usuario</b></div>
+                    <div class="panel-body">        
+                <form method="POST" action="actualizar-perfil.php">                  
+                <div align="center" class="form-add-trec">
+                <!-- consulta -->
+                <?php
+                include ("conexion.php");
+                $id_usu=$_SESSION['id_usuario'];
+                $registrous=mysqli_query($conexion,"SELECT id_usuario, nombre_usuario, cod_usuario FROM usuario
+                    WHERE id_usuario='$id_usu'") or die("Problemas en la consulta");
+                while ($row=mysqli_fetch_array($registrous)){
+                ?>
+                <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario'];?>"/>
+                     
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Nombres Usuario</div>
+                  <div class="panel-body"><input type="text" name="nombre_usuario" required class="form-control" value="<?php echo $row['nombre_usuario'];?>"/></div>
+                </div>
+                <div class="panel panel-info-m">
+                  <div class="panel-heading">Codigo Usuario</div>
+                  <div class="panel-body"><input type="text" name="cod_usuario" required class="form-control" value="<?php echo $row['cod_usuario'];?>"/></div>
+                </div>
+                <div><input type="submit" value="Actualizar Datos" class="btn btn-primary"></div>
+
+                <?php }?>
+                </div>
+                </form>
+
+                    </div>
+                </div>
+            </div>        
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

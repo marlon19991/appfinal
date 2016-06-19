@@ -46,7 +46,7 @@ $registro=mysqli_query($conexion,"SELECT id_usuario, nombre_usuario, cod_usuario
 if($re=mysqli_fetch_array($registro)){
 mysqli_query($conexion,"UPDATE usuario set id_usuario='$id_usuario', nombre_usuario='$nombre_usuario', cod_usuario='$cod_usuario' 
 WHERE id_usuario='$id_usuario'") or die("Problemas al actualizar");
-echo "<div align='center' class='panel panel-primary-m'><h4>Nombre actualizado de forma exitosa</h4></div>";
+echo "<div align='center' class='panel panel-primary-m'><h4>Actualizando</h4></div>";
 echo "<META HTTP-EQUIV=Refresh CONTENT='1; URL=index_doc.php'>";
 }
 else{
