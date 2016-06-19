@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><a href="gallery.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
-							<li><a href="#menu" class="scroll">Acerca De</a></li>
+							
 								
 								<li class="dropdown ">
                     <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp Marlon Yela<b class="caret"></b></a>
@@ -147,166 +147,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 						<!--staff-->
-							<div class="staff-section">
-								<div class="container">
-									<h3><span>our</span> staff</h3>
-									<ul class="ch-grid">
-										<li>
-											<div class="ch-item">				
-												<div class="ch-info">
-													<div class="ch-info-front ch-img-1"></div>
-													<div class="ch-info-back">
-															<h4>Chef</h4>
-														<p>Lorem ipsum  <a href="#">consectetur</a></p>
-													</div>	
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="ch-item">
-												<div class="ch-info">
-													<div class="ch-info-front ch-img-2"></div>
-													<div class="ch-info-back">
-															<h4>Hostess</h4>
-														<p>Lorem ipsum  <a href="#">consectetur</a></p>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="ch-item">
-												<div class="ch-info">
-													<div class="ch-info-front ch-img-3"></div>
-													<div class="ch-info-back">
-															<h4>Manager</h4>
-														<p>Lorem ipsum  <a href="#">consectetur</a></p>
-													</div>
-												</div>
-											</div>
-										</li>
-										 <li>
-											<div class="ch-item">
-												<div class="ch-info">
-													<div class="ch-info-front ch-img-4"></div>
-													<div class="ch-info-back">
-															<h4>Waitress</h4>
-														<p>Lorem ipsum  <a href="#">consectetur</a></p>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-
-								</div>
-							</div>
-						<!--staff-->
-							<!--iteam-->
-						<div class="iteam">
-							<div class="container">
-								<h3><span>food</span> items</h3>
-									<div class="items-grids">
-										<div class="col-md-4 items-grid">
-											<img src="images/g1.jpg"" class="img-responsive" alt="/">
-										</div>
-										<div class="col-md-4 items-grid">
-											<img src="images/g2.jpg"" class="img-responsive" alt="/">
-										</div>
-										<div class="col-md-4 items-grid">
-											<img src="images/g4.jpg"" class="img-responsive" alt="/">
-										</div>
-										
-										<div class="clearfix"></div>
-									</div>
-							</div>
-						</div>
-						<!--iteam-->
-						<!--our History-->
-							<div class="history-section">
-								<div class="container">
-									<h3><span>our</span> History</h3>
-									<div class="history-grids">
-										<div class="col-md-3 history-grid">
-											<figure class="icon">
-											<i class="glyphicon glyphicon-cutlery"></i>
-											</figure>
-											<h5>126</h5>
-											<h6>DISHES IN MENU</h6>										
-										</div>
-										<div class="col-md-3 history-grid">
-										<figure class="icon">
-											 <i class="glyphicon glyphicon-thumbs-up"></i>
-											</figure>
-											<h5>400</h5>
-											<h6>POSITIVE REVIEWS</h6>										
-										</div>
-										<div class="col-md-3 history-grid">
-										<figure class="icon">
-											 <i class="glyphicon glyphicon-flag"></i>
-											</figure>
-											<h5>25</h5>
-											<h6>YEARS OF EXPERIENCE</h6>
-										</div>
-										<div class="col-md-3 history-grid">
-											<figure class="icon">
-											 <i class="glyphicon glyphicon-user"></i>
-											</figure>
-											<h5>100%</h5>
-											<h6>FRIENDLY STAFF</h6>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
-							</div>
+						
+							
 						<!--our History-->
 						<!--footer-->
-					<div class="footer-section">
-						<div class="container">
-							<div class="footer-grids">
-								<div class="col-md-3 footer-grid">
-									<h4>product</h4>
-									<ul>
-										<li>Fresh fruits </li>
-										<li>Dried fruits</li>
-										<li>Herbs & spices</li>
-										<li>Fresh vegetables</li>
-										<li>Seafood</li>
-									</ul>
-								</div>
-								<div class="col-md-3 footer-grid">
-									<h4>Open Hours</h4>
-									<ul>
-										<li>Mondays: Closed</li>
-										<li>Tue-Fri : 10am - 11pm</li>
-										<li>Sat-Sun : 9am - 11pm</li>
-										<li>Public Holidays : 10am - 8pm</li>
-									</ul>
-								</div>
-								<div class="col-md-3 footer-grid">
-									<h4>Social</h4>
-									<ul>
-										<li><a href="#">facebook</a></li>
-										<li><a href="#">twitter</a></li>
-										<li><a href="#">google +</a></li>
-										<li><a href="#">Pinterest</a></li>
-										<li><a href="#">vimeo</a></li>
-									</ul>
-								</div>
-								<div class="col-md-3 footer-grid">
-									<h4>Get In Touch</h4>
-									<p>8901 Marmora Road</p>
-									<p>Glasgow, DO4 89GR.</p>
-									<p>Telephone : +1 234 567 890</p>
-									<p>FAX : + 1 234 567 890</p>
-									<p>E-mail : <a href="mailto:example@mail.com"> example@mail.com</a></p>
-
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-			<!--footer-->	
-
-				</div>
+									<div class="content">
+			
+			
+					
 				<!--copy-->
 					<div class="copy-section">
 						<div class="container">
@@ -314,5 +162,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				<!--copy-->
+		
 </body>
 </html>
