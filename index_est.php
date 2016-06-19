@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sistema De Calificaciones<</title>
+<title>Sistema de Calificaciones</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,16 +60,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 						</button>				  
 						<div class="navbar-brand navbar-right">
-							<h1><a href="index.php">Sistema De Calificaciones</a></h1>
+							<h1><a href="">Sistema De Calificaciones</a></h1>
 						</div>
 					</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
+			<br>
+					<div class=" collapse navbar-collapse navbar-right pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br>
-							<li class="active"><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
-							<li><a href="registrar.php">Registrar Notas</a></li>
-							<li><a href="actualizar.php">Actualizar Notas</a></li>
+							<li class="active"><a href="index_est.php">Inicio <span class="sr-only">(current)</span></a></li>
 								<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultar Notas <span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -78,9 +77,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><a href="gallery.php">Consultar Por Grado</a></li>
 									</ul>
 								</li>
-							<li><a href="#menu" class="scroll">Acerca De</a></li>
+								<li><a href="#menu" class="scroll">Acerca De</a></li>
 								
-								<li class="dropdown ">
+						<li class="dropdown ">
                     <a href="#" class="dropdown-toggle nav navbar-right" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp Marlon Yela<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -94,12 +93,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <a href="cerrar.php"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesión</a>
                         </li>								
-						</ul>								  
-					</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-					</nav>
-			
-
+			</ul>								  
+		</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+		</nav>
 			<div class="slider">
 				<div class="callbacks_container">
 					<ul class="rslides" id="slider">
@@ -109,9 +106,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<img src="images/p.png"  class="img-responsive" alt="/">
 							</div>
 							<div class="col-md-6 cap">
-								<h3>The highest quality </h3>  
-								<p>Lorem ipsum dolor sit amet, consectetuer adipig elit. Praesent vestibulummolestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fuscesuscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
-								<a class="button" data-toggle="modal" data-target="#myModal1" href="#">order online</a>
+								<h3>Bienvenido</h3>  
+								<p>Este sistema esta doseñado para registrar las notas periodicas del estudiante. tambien encontraras opciones de actualizacion y consulta por Informes.</p>
+								
 							</div>
 							</div>
 							<div class="clearfix"></div>
@@ -122,9 +119,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<img src="images/p1.png"  class="img-responsive" alt="/">
 							</div>
 							<div class="col-md-6 cap">
-								<h3>made specially for u </h3> 
-								<p>Lorem ipsum dolor sit amet, consectetuer adipig elit. Praesent vestibulummolestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fuscesuscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
-								<a class="button" data-toggle="modal" data-target="#myModal1" href="#">order online</a>
+								<h3>¿Qué Puedes Hacer?</h3> 
+								<p>En este sistema puedes ingresar y registrar las notas evaluativas de tus estudiantes. Registra, Actualiza u Observa las notas de tus alumnos en el año escolar.</p>
+								
 							</div>
 							</div>
 							<div class="clearfix"></div>
@@ -135,9 +132,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<img src="images/p2.png"  class="img-responsive" alt="/">
 							</div>
 							<div class="col-md-6 cap">
-								<h3>The highest quality </h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipig elit. Praesent vestibulummolestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fuscesuscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
-								<a class="button" data-toggle="modal" data-target="#myModal1" href="#">order online</a>
+								<h3>Desarrolladores</h3>
+								<p>Desarrollado por.<br> Cristian Andrés Patiño Portilla.<br> Marlon Estaban Yela Burbano</p>
 							</div>
 							</div>
 							<div class="clearfix"></div>
@@ -149,12 +145,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!--header-->
-			<!--content-->
-				<div class="content">
-			
-			
+					
 						<!--footer-->
-					<div class="footer-section" id="menu">
+					<div class="footer-section">
 						<div class="container">
 							<div class="footer-grids">
 								<div class="col-md-3 footer-grid">
