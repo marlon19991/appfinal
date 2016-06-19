@@ -108,14 +108,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="cook3">
 										<h3>Formulario</h3>
 										<br>
-										<p>Completa los campor y registra las notas periodicas de los estudiantes</p>
+										<p>Completa los campos y registra las notas periodicas de los estudiantes</p>
 										<br>
 										
 											<form method="Post" action="registrar-nota.php">
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-1">Grado Academico</label></div>
+													<div><label for="select-native-1">Grado Academico</label></div><br>
 												</div>
 												<div class="col-md-5">
 													<div>
@@ -133,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 												<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-2">Periodo Academico</label></div>
+													<div><label for="select-native-2">Periodo Academico</label></div><br>
 												</div>
 												<div class="col-md-5">
 													<div>
@@ -149,10 +149,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 												</div>
 
+												
 												<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-3">Materia</label></div>
-												</div>
+													<div><label for="select-native-3">Materia</label></div><br>
+												</div>										
 												<div class="col-md-5">
 													<div>
 													    <select name="id_materia" id="select-native-3" class="btn btn-warning">
@@ -166,12 +167,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 												</div>
 												</div>
-												<div class="col-md-3"></div>
-											<hr>
+												
 											
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-1">Estudiantes</label></div>
+													<div><label for="select-native-1">Estudiantes</label></div><br>
 												</div>
 												<div class="col-md-5">
 											              <select name="id_usuario" id="select-native-1" class="btn btn-warning">
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-2">Nota</label></div>
+													<div><label for="select-native-2">Nota</label></div><br>
 												</div>
 												<div class="col-md-5">
 												        <div><input type="text" name="nota" class="form-control" placeholder="Nota"/></div>
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<div class="row">
 												<div class="col-md-4">
-													<div><label for="select-native-3">Descripcion</label></div>
+													<div><label for="select-native-3">Descripcion</label></div><br>
 												</div>
 												<div class="col-md-5 ">
 												        <div class="form-group"><textarea type="text " name="desc" class="form-control" placeholder="Descripción" rows="5"></textarea></div>
