@@ -101,10 +101,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="container">
 							<h2><span>Actualizar</span> Notas</h2>
 								<div class="about-grids">
+								<div class="row">
 									<div class="col-md-3 about-grid1">
 										<img src="images/g8.jpg" class="img-responsive" alt="/">
 									</div>
-									<div class="col-md-9 about-grid">
+								</div>
+								<div class="row">
+									<div class="col-md-12 about-grid">
 										<h5>Formulario</h5>
 										<br>
 												<?php
@@ -125,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												    or die ("Hay problemas en la consulta".$r);											
 												?>
 
-												<form>
+												<form method="post" action="actualizar-calif.php">
 													<div class="panel panel-success">
 												        	<div class="row panel-heading">
 															<div class="col-md-1">Id Reporte</div>
@@ -138,27 +141,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												            <div class="col-md-2">Fecha</div>
 												            <div class="col-md-1">Guardar</div>
 												        	</div><br>
+								
 												        <?php while ($campoes=mysqli_fetch_array($r)) { ?>
 												            <div class="row panel-body">
+												            <input type="hidden" name="id_reporte" value="<?php echo $campoes['id_reporte'];?>"/>
 												            <div class="col-md-1"><?php echo $campoes['id_reporte'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nombre_usuario'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nombre_grado'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['Periodo_escolar'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nombre_materia'];?></div>
-												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['nota'];?>"/>
+												            <div class="col-md-2"><input type="text" name="nota" required class="form-control" value="<?php echo $campoes['nota'];?>"/>
 												            </div>
-												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['descripcion'];?>"/>
+												            <div class="col-md-2"><input type="text" name="descripcion" required class="form-control" value="<?php echo $campoes['descripcion'];?>"/>
 												            </div>
-												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['fecha'];?>"/>
+												            <div class="col-md-2"><input type="text" name="fecha" required class="form-control" value="<?php echo $campoes['fecha'];?>"/>
 												            </div>
-												            <div class="col-md-1" align="center"><a href="#"><img src="images/save.png" width="25px" height="25px"></a></div>
+												            <div class="col-md-1" align="center"><input type="submit" value="Guardar" class="btn btn-primary"/></div>
 												            </div>
 												        <?php } ?>
+												 
 												        </div>
 
 												</form>
 												        
 									</div>
+								</div>
 									<div class="clearfix"></div>
 								</div>
 						</div>
