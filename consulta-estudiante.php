@@ -159,24 +159,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												        <div class="panel panel-success">
 												        	<div class="row panel-heading">
 															<div class="col-md-1">Id Rorte</div>
-															<div class="col-md-2">Nombre Estudiante</div>
+															<div class="col-md-1">Nombre Estudiante</div>
 												            <div class="col-md-1">Grado</div>
 												            <div class="col-md-1">Periodo</div>
-												            <div class="col-md-2">Materia</div>
+												            <div class="col-md-1">Materia</div>
 												            <div class="col-md-1">Nota</div>
-												            <div class="col-md-2">Comentario</div>
-												            <div class="col-md-2">Fecha</div>
+												            <div class="col-md-1">Comentario</div>
+												            <div class="col-md-1">Fecha</div>
 												        	</div><br>
 												        <?php while ($campoes=mysqli_fetch_array($r)) { ?>
 												            <div class="row panel-body">
 												            <div class="col-md-1"><?php echo $campoes['id_reporte'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['nombre_usuario'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['nombre_usuario'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nombre_grado'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['Periodo_escolar'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['nombre_materia'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['nombre_materia'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nota'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['descripcion'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['fecha'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['descripcion'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['fecha'];?></div>
 												            </div>
 												        <?php } ?>
 												        </div>

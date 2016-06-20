@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class=" collapse navbar-collapse navbar-left pull" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav "><br><br><br>
-							<li ><a href="index.php">Inicio <span class="sr-only">(current)</span></a></li>
+							<li ><a href="index_doc.php">Inicio <span class="sr-only">(current)</span></a></li>
 							<li ><a href="registrar.php">Registrar Notas</a></li>
 							<li class="active"><a href="actualizar.php">Actualizar Notas</a></li>
 								<li class="dropdown">
@@ -106,35 +106,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="col-md-9 about-grid">
 										<h5>Formulario</h5>
-											<h3>Consulta por estudiante</h3>
 										<br>
-
-											<form method="Post" action="actualizar.php">
-
-											<div class="row">
-												<div class="col-md-4">
-													<div><label for="select-native-1">Busca y seleccione el estudiante</label></div>
-												</div>
-												<div class="col-md-5">
-											              <select name="id_usuarios" id="select-native-1" class="btn btn-warning">
-											                  <option value="">Estudiantes</option>
-											                  <?php while ( $row = $registroe->fetch_array() ){?>
-											                  <option value=" <?php echo $row['id_usuario'] ?> " >
-											                  <?php echo $row['nombre_usuario']; ?>
-											                  </option>
-											                  <?php }?>    
-											              </select> 
-											    </div>
-											</div>
-											<br>
-											<div class="row">
-												<div align="center" class="col-md-12"><input type="submit" value="Buscar" class="btn btn-primary"></div>
-											</div>
-											<br>
-											</form>
-											
 												<?php
-												$id_usuario = $_POST['id_usuarios'];
+												$id_reporte = $_GET['id_reporte'];
 												include("conexion.php");
               										$r=mysqli_query($conexion,"SELECT 
 												    reporte.id_reporte, usuario.id_usuario, usuario.nombre_usuario, grado.nombre_grado, Periodo.Periodo_escolar, materia.nombre_materia,reporte.nota, reporte.descripcion, reporte.fecha
@@ -147,36 +121,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												    ON materia.id_materia=reporte.id_materia
 												    INNER JOIN Periodo
 												    ON Periodo.id_periodo=reporte.id_periodo
-												    where reporte.id_usuario=".$id_usuario)
+												    where reporte.id_reporte=".$id_reporte)
 												    or die ("Hay problemas en la consulta".$r);											
 												?>
-												        <div class="panel panel-success">
+
+												<form>
+													<div class="panel panel-success">
 												        	<div class="row panel-heading">
-															<div class="col-md-1">Id Rorte</div>
-															<div class="col-md-2">Nombre Estudiante</div>
+															<div class="col-md-1">Id Reporte</div>
+															<div class="col-md-1">Nombre Estudiante</div>
 												            <div class="col-md-1">Grado</div>
 												            <div class="col-md-1">Periodo</div>
-												            <div class="col-md-2">Materia</div>
-												            <div class="col-md-1">Nota</div>
+												            <div class="col-md-1">Materia</div>
+												            <div class="col-md-2">Nota</div>
 												            <div class="col-md-2">Comentario</div>
-												            <div class="col-md-1">Fecha</div>
-												            <div class="col-md-1">Actualizar</div>
+												            <div class="col-md-2">Fecha</div>
+												            <div class="col-md-1">Guardar</div>
 												        	</div><br>
 												        <?php while ($campoes=mysqli_fetch_array($r)) { ?>
 												            <div class="row panel-body">
 												            <div class="col-md-1"><?php echo $campoes['id_reporte'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['nombre_usuario'];?></div>
+												            <div class="col-md-1"><?php echo $campoes['nombre_usuario'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['nombre_grado'];?></div>
 												            <div class="col-md-1"><?php echo $campoes['Periodo_escolar'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['nombre_materia'];?></div>
-												            <div class="col-md-1"><?php echo $campoes['nota'];?></div>
-												            <div class="col-md-2"><?php echo $campoes['descripcion'];?></div>
-												            <div class="col-md-1"><?php echo $campoes['fecha'];?></div>
-												            <div class="col-md-1" align="center"><a href="actualizar-nota.php?id_reporte=<?php echo $campoes['id_reporte'];?>"><img src="images/update.png" width="25px" height="25px"></a></div>
+												            <div class="col-md-1"><?php echo $campoes['nombre_materia'];?></div>
+												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['nota'];?>"/>
+												            </div>
+												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['descripcion'];?>"/>
+												            </div>
+												            <div class="col-md-2"><input type="" name="" required class="form-control" value="<?php echo $campoes['fecha'];?>"/>
+												            </div>
+												            <div class="col-md-1" align="center"><a href="#"><img src="images/save.png" width="25px" height="25px"></a></div>
 												            </div>
 												        <?php } ?>
 												        </div>
 
+												</form>
+												        
 									</div>
 									<div class="clearfix"></div>
 								</div>
